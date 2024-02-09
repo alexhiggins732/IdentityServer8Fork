@@ -1,13 +1,13 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
 using System;
 using System.Linq;
 using IdentityModel;
-using IdentityServer4;
-using IdentityServer4.AspNetIdentity;
-using IdentityServer4.Configuration;
+using IdentityServer8;
+using IdentityServer8.AspNetIdentity;
+using IdentityServer8.Configuration;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 
@@ -54,7 +54,7 @@ namespace Microsoft.Extensions.DependencyInjection
             builder.Services.ConfigureExternalCookie(options =>
             {
                 options.Cookie.IsEssential = true;
-                // https://github.com/IdentityServer/IdentityServer4/issues/2595
+                // https://github.com/IdentityServer/IdentityServer8/issues/2595
                 options.Cookie.SameSite = AspNetCore.Http.SameSiteMode.None;
             });
 

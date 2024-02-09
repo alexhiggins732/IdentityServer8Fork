@@ -1,21 +1,21 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
 using System.Linq;
 using FluentAssertions;
-using IdentityServer4.EntityFramework.Mappers;
+using IdentityServer8.EntityFramework.Mappers;
 using Xunit;
-using ApiResource = IdentityServer4.Models.ApiResource;
+using ApiResource = IdentityServer8.Models.ApiResource;
 
-namespace IdentityServer4.EntityFramework.UnitTests.Mappers
+namespace IdentityServer8.EntityFramework.UnitTests.Mappers
 {
     public class ApiResourceMappersTests
     {
         [Fact]
         public void AutomapperConfigurationIsValid()
         {
-            ApiResourceMappers.Mapper.ConfigurationProvider.AssertConfigurationIsValid<ApiResourceMapperProfile>();
+            ApiResourceMappers.Mapper.ConfigurationProvider.AssertConfigurationIsValid();
         }
 
         [Fact]
@@ -62,7 +62,7 @@ namespace IdentityServer4.EntityFramework.UnitTests.Mappers
         [Fact]
         public void missing_values_should_use_defaults()
         {
-            var entity = new IdentityServer4.EntityFramework.Entities.ApiResource
+            var entity = new IdentityServer8.EntityFramework.Entities.ApiResource
             {
                 Secrets = new System.Collections.Generic.List<Entities.ApiResourceSecret>
                 {

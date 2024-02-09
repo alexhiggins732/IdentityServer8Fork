@@ -1,22 +1,22 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
 using System;
 using System.Threading.Tasks;
-using IdentityServer4.EntityFramework.Entities;
-using IdentityServer4.EntityFramework.Extensions;
-using IdentityServer4.EntityFramework.Interfaces;
-using IdentityServer4.EntityFramework.Options;
+using IdentityServer8.EntityFramework.Entities;
+using IdentityServer8.EntityFramework.Extensions;
+using IdentityServer8.EntityFramework.Interfaces;
+using IdentityServer8.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
 
-namespace IdentityServer4.EntityFramework.DbContexts
+namespace IdentityServer8.EntityFramework.DbContexts
 {
     /// <summary>
     /// DbContext for the IdentityServer operational data.
     /// </summary>
     /// <seealso cref="Microsoft.EntityFrameworkCore.DbContext" />
-    /// <seealso cref="IdentityServer4.EntityFramework.Interfaces.IPersistedGrantDbContext" />
+    /// <seealso cref="IdentityServer8.EntityFramework.Interfaces.IPersistedGrantDbContext" />
     public class PersistedGrantDbContext : PersistedGrantDbContext<PersistedGrantDbContext>
     {
         /// <summary>
@@ -35,7 +35,7 @@ namespace IdentityServer4.EntityFramework.DbContexts
     /// DbContext for the IdentityServer operational data.
     /// </summary>
     /// <seealso cref="Microsoft.EntityFrameworkCore.DbContext" />
-    /// <seealso cref="IdentityServer4.EntityFramework.Interfaces.IPersistedGrantDbContext" />
+    /// <seealso cref="IdentityServer8.EntityFramework.Interfaces.IPersistedGrantDbContext" />
     public class PersistedGrantDbContext<TContext> : DbContext, IPersistedGrantDbContext
         where TContext : DbContext, IPersistedGrantDbContext
     {

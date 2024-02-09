@@ -1,22 +1,22 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
 using System;
 using System.Linq;
 using FluentAssertions;
-using IdentityServer4.EntityFramework.Mappers;
+using IdentityServer8.EntityFramework.Mappers;
 using Xunit;
-using Client = IdentityServer4.Models.Client;
+using Client = IdentityServer8.Models.Client;
 
-namespace IdentityServer4.EntityFramework.UnitTests.Mappers
+namespace IdentityServer8.EntityFramework.UnitTests.Mappers
 {
     public class ClientMappersTests
     {
         [Fact]
         public void AutomapperConfigurationIsValid()
         {
-            ClientMappers.Mapper.ConfigurationProvider.AssertConfigurationIsValid<ClientMapperProfile>();
+            ClientMappers.Mapper.ConfigurationProvider.AssertConfigurationIsValid();
         }
 
         [Fact]
@@ -67,7 +67,7 @@ namespace IdentityServer4.EntityFramework.UnitTests.Mappers
         [Fact]
         public void duplicates_properties_in_db_map()
         {
-            var entity = new IdentityServer4.EntityFramework.Entities.Client
+            var entity = new IdentityServer8.EntityFramework.Entities.Client
             {
                 Properties = new System.Collections.Generic.List<Entities.ClientProperty>()
                 {
@@ -83,7 +83,7 @@ namespace IdentityServer4.EntityFramework.UnitTests.Mappers
         [Fact]
         public void missing_values_should_use_defaults()
         {
-            var entity = new IdentityServer4.EntityFramework.Entities.Client
+            var entity = new IdentityServer8.EntityFramework.Entities.Client
             {
                 ClientSecrets = new System.Collections.Generic.List<Entities.ClientSecret>
                 {
